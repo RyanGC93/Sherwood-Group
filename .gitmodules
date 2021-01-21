@@ -1,0 +1,3 @@
+[submodule "express-bone-structure"]
+	path = express-bone-structure
+	url = git@github.com:RyanGC93/express-bone-structure.git
