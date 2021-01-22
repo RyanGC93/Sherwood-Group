@@ -1,3 +1,6 @@
 [submodule "express-bone-structure"]
 	path = express-bone-structure
 	url = git@github.com:RyanGC93/express-bone-structure.git
+[submodule "Sherwood-Group.wiki"]
+	path = Sherwood-Group.wiki
+	url = https://github.com/RyanGC93/Sherwood-Group.wiki.git
