@@ -1,0 +1,9 @@
+.search__bar {
+    /* position: relative; */
+    display: flex;
+    background-color: black;
+    width: 400px;
+    height: 45px;
+    justify-content: space-around;
+
+}

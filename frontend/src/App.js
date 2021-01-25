@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Navigation from './components/Navigation';
+import NewsFeed from './components/Newsfeed/Newsfeed'
 import { restoreUser } from './store/session';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
+      <NewsFeed />
     </>
   );
 }

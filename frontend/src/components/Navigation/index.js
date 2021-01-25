@@ -31,11 +31,11 @@ const Navigation = ({ isLoaded }) => {
 
   return (
     <nav className="navbar">
-      <SearchBar />
       <ul className="navbar__nav-links">
         <li className="navbar__nav-links--navlink">
           <NavLink to="/" exact>Home</NavLink>
         </li>
+        <SearchBar />
         {isLoaded && sessionLinks}
       </ul>
     </nav>

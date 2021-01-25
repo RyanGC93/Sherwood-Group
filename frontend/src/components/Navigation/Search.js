@@ -30,9 +30,20 @@ function SearchBar() {
     console.log('Focused')
   }
 
+  const handleOnEnter = (e) => {
+    if (e.key === 'Enter') {
+      // console.log(item);
+      console.log("enter")
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="search__bar"
+      onKeyDown={handleOnEnter}
+      
+      tabIndex="0"
+    >
+      {/* <header className="App-header"> */}
         <div style={{ width: 400 }}>
           <ReactSearchAutocomplete
             items={items}
@@ -44,7 +55,7 @@ function SearchBar() {
             autoFocus
           />
         </div>
-      </header>
+      {/* </header> */}
     </div>
   )
 }
