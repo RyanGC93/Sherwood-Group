@@ -39,7 +39,8 @@ function SearchBar() {
             onSearch={handleOnSearch}
             onSelect={handleOnSelect}
             onFocus={handleOnFocus}
-            resultStringKeyName="id"
+            fuseOptions={{ keys: ["name","description"]}}
+            resultStringKeyName="stockWithDescription"
             autoFocus
           />
         </div>
