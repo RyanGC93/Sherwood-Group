@@ -1,4 +1,4 @@
-import {LineGraph} from '../LineGraph/LineGraph';
+import LineGraph from '../LineGraph/LineGraph';
 // import {LineGraph} from '../LineGraph/LineGraph'
 
 function Newsfeed(){
@@ -7,7 +7,7 @@ function Newsfeed(){
 
     return (
         <div className="newsfeed">
-            <div className="newsfeed__contianer">
+            <div className="newsfeed__contianer">,
                 <div clasName="assest_charts">
                     <div className="userAssets_overview">
                         <h1>Total Portfolio Value</h1>

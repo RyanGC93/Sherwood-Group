@@ -34,7 +34,10 @@ function LineGraph({ casesType }) {
 	        time: {
 	          format: "MM/DD/YY",
 	          tooltipFormat: "ll",
-	        },
+          },
+            gridLines: {
+                display: false,
+            },
 	        ticks: {
 	          display: false,
 	        }
@@ -74,7 +77,8 @@ function LineGraph({ casesType }) {
             datasets: [
               {
                 type: 'line',
-                backgroundColor: "black",
+                backgroundColor: 'rgba(0, 0, 0, 0)',
+                showLine: true,
                 borderColor: "#5AC53B",
                 borderWidth: 2,
                 pointBorderColor: 'rgba(0, 0, 0, 0)',
