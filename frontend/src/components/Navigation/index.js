@@ -6,6 +6,8 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 
+import SearchBar from './Search'
+
 const Navigation = ({ isLoaded }) => {
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -29,6 +31,7 @@ const Navigation = ({ isLoaded }) => {
 
   return (
     <nav className="navbar">
+      <SearchBar />
       <ul className="navbar__nav-links">
         <li className="navbar__nav-links--navlink">
           <NavLink to="/" exact>Home</NavLink>
