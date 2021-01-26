@@ -8,7 +8,14 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER
   }, {});
   Transaction_history.associate = function(models) {
-    // associations can be defined here
+    Transaction_history.hasMany(models.Stocks, {
+      foreignKey: "stock_id",
+      onDelete: 'cascade',
+      hooks: true,
+    })
+    Transaction_history.belongsTo(models.User, {
+      foreignKey: "user_id"
+    })    
   };
   return Transaction_history;
 };

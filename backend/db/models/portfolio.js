@@ -6,7 +6,14 @@ module.exports = (sequelize, DataTypes) => {
     qty_owned: DataTypes.STRING
   }, {});
   Portfolio.associate = function(models) {
-    // associations can be defined here
+    Portfolio.hasMany(models.Stocks, {
+      foreignKey: "stock_id",
+      onDelete: 'cascade',
+      hooks: true,
+    })
+    Portfolio.belongsTo(models.User, {
+      foreignKey: "user_id"
+    })   
   };
   return Portfolio;
 };

@@ -5,7 +5,15 @@ module.exports = (sequelize, DataTypes) => {
     stock_ticker: DataTypes.STRING
   }, {});
   Stock.associate = function(models) {
-    // associations can be defined here
+    Stock.belongsTo(models.Portfolio, {
+      foreignKey: "stock_id"
+    })    
+    Stock.belongsTo(models.Watched_stocks, {
+      foreignKey: "stock_id"
+    })        
+    Stock.belongsTo(models.Transaction_history, {
+      foreignKey: "stock_id"
+    })       
   };
   return Stock;
 };
