@@ -16,6 +16,20 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2, 40]
+      }
+    }, 
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2, 40]
+      }
+    },        
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -23,6 +37,10 @@ module.exports = (sequelize, DataTypes) => {
         len: [3, 256]
       }
     },
+    buying_power: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    }, 
     hashedPassword: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -33,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     defaultScope: {
       attributes: {
-        exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
+        exclude: ['buying_power','first_name','last_name','hashedPassword', 'email', 'createdAt', 'updatedAt'],
       },
     },
     scopes: {
@@ -69,17 +87,27 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     }
   };
-  User.signup = async function({ username, email, password }) {
+  User.signup = async function({ username, firstname,lastname, email, password }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
-      email,
+      firstname,
+      lastname,
       hashedPassword,
+      email,
     });
     return await User.scope('currentUser').findByPk(user.id);
   };
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany(models.Portfolio, {
+      foreignKey: "user_id"
+    })
+    User.hasMany(models.Watchlist, {
+      foreignKey: "user_id"
+    })
+    User.hasMany(models.Transaction_history, {
+      foreignKey: "user_id"
+    })
   };
   return User;
 };

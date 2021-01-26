@@ -1,0 +1,6 @@
+npx sequelize model:generate --name Stock --attributes name:string,stock_ticker:string
+npx sequelize model:generate --name Portfolio --attributes user_id:string,stock_id:string,qty_owned:string
+npx sequelize model:generate --name Watchlist --attributes watchlist:string,user_id:integer
+
+npx sequelize model:generate --name Watched_stock --attributes watchlist_id:integer,stock_id:integer
+npx sequelize model:generate --name Transaction_history --attributes buy_or_sell:string,mkt_price:float,actual_shares:float,stock_id:integer,user_id:integer
