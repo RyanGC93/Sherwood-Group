@@ -10,6 +10,8 @@ const SignupForm= () => {
   const sessionUser = useSelector(state => state.session.user);
 
   const [username, setUsername] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -22,6 +24,8 @@ const SignupForm= () => {
     if (password === confirmPassword) {
       const user = {
         username,
+        firstname,
+        lastname,
         email,
         password,
       };
@@ -47,6 +51,14 @@ const SignupForm= () => {
           <label className="form__input-group--label">Username</label>
           <input required className="form__input-group--input-field" type="text" value={username} onChange={e => setUsername(e.target.value)} />
         </div>
+        <div className="form__input-group">
+          <label className="form__input-group--label">Firstname</label>
+          <input required className="form__input-group--input-field" type="text" value={firstname} onChange={e => setFirstname(e.target.value)} />
+        </div>  
+        <div className="form__input-group">
+          <label className="form__input-group--label">Lastname</label>
+          <input required className="form__input-group--input-field" type="text" value={lastname} onChange={e => setLastname(e.target.value)} />
+        </div>              
         <div className="form__input-group">
           <label className="form__input-group--label">Email</label>
           <input required className="form__input-group--input-field" type="email" value={email} onChange={e => setEmail(e.target.value)} />
