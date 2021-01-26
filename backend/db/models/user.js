@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     defaultScope: {
       attributes: {
-        exclude: ['first_name','last_name','hashedPassword', 'email', 'createdAt', 'updatedAt'],
+        exclude: ['buying_power','first_name','last_name','hashedPassword', 'email', 'createdAt', 'updatedAt'],
       },
     },
     scopes: {
@@ -94,7 +94,6 @@ module.exports = (sequelize, DataTypes) => {
       firstname,
       lastname,
       email,
-      hashedPassword,
     });
     return await User.scope('currentUser').findByPk(user.id);
   };

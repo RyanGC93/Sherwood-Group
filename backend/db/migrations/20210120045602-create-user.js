@@ -28,8 +28,8 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
-      email: {
-        type: Sequelize.STRING(256),
+      buying_power: {
+        type: Sequelize.INTEGER,
         allowNull: true,
       },
       hashedPassword: {

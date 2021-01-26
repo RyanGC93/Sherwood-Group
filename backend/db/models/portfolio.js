@@ -1,9 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Portfolio = sequelize.define('Portfolio', {
-    user_id: DataTypes.STRING,
-    stock_id: DataTypes.STRING,
-    qty_owned: DataTypes.STRING
+    user_id: DataTypes.INTEGER,
+    stock_id: DataTypes.INTEGER,
+    qty_owned: DataTypes.INTEGER
   }, {});
   Portfolio.associate = function(models) {
     Portfolio.hasMany(models.Stocks, {
