@@ -37,6 +37,10 @@ module.exports = (sequelize, DataTypes) => {
         len: [3, 256]
       }
     },
+    buying_power: {
+      type: DataTypes.Integer,
+      allowNull: true,
+    }, 
     hashedPassword: {
       type: DataTypes.STRING,
       allowNull: false,
