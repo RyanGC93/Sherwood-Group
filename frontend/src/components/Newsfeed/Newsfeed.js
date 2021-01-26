@@ -1,4 +1,5 @@
 import LineGraph from '../LineGraph/LineGraph';
+import GraphTimeLine from '../GraphTimeLine/GraphTimeLine'
 // import {LineGraph} from '../LineGraph/LineGraph'
 // import {key} from "../apiInfo.js"
 function Newsfeed(){
@@ -12,6 +13,7 @@ function Newsfeed(){
                         <p>Stock Gaines/losses</p>
                     </div>
                     <LineGraph />
+                    <GraphTimeLine />
                 </div>
                 <div> 
                     <h1>BuyingPower</h1>
@@ -23,14 +25,15 @@ function Newsfeed(){
 
                     </div>
                 </div>
-                <div className="newsStock">
-                    <h1>News</h1>
-                    
-                </div>
                 <div className="topMovers">
                     <h1>Top Movers</h1>
                     
+                </div>                
+                <div className="newsStories">
+                    <h1>News</h1>
+                    
                 </div>
+
             </div>
         </div>
     )

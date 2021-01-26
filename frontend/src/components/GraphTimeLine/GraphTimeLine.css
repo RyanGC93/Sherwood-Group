@@ -1,0 +1,29 @@
+.timeline__holder{
+	display: flex;
+
+		
+}
+
+
+.timelineOptions__holder{
+	display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 10px;
+	border-bottom: 2px solid gray;    
+}
+
+.active,.graphtimeline__option{
+	color: green;
+	border-bottom: 2px solid white;
+}
+
+.timeline__option{
+	display: flex
+	
+}
+
+.timeline__option:hover{
+	color: green;
+	
+}

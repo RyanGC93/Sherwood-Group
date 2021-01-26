@@ -70,7 +70,7 @@ function LineGraph({ casesType }) {
   }, []);
 
   return (
-    <div>
+    <div className="lineGraph">
       {data?.length > 0 && (
         <Line
           data={{

@@ -31,3 +31,8 @@
   list-style: none;
   display: flex;
 }
+
+a{
+	color: white;
+	display:inline-block;
+}

@@ -1,8 +1,8 @@
-import key from "../apiInfo.js"
-const apiAuth = `&token=${key}`
+// import key from "../apiInfo.js"
 
-const Base_url = "https://finnhub.io/api/v1/news?category=general"
-cost
+
+
+
 
 const getNewsStory = async() => {
     const newsUrl = "https://finnhub.io/api/v1/news?category=general"
@@ -18,6 +18,7 @@ const getNewsStory = async() => {
 }
 
 function NewsStories() {
+	
 
 
 
