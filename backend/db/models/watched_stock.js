@@ -5,12 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     stock_id: DataTypes.INTEGER
   }, {});
   Watched_stock.associate = function(models) {
-    Watched_stock.hasMany(models.Stocks, {
+    Watched_stock.hasMany(models.Stock, {
       foreignKey: "stock_id",
       onDelete: 'cascade',
       hooks: true,
     })
-    Watched_stock.belongsTo(models.WatchList, {
+    Watched_stock.belongsTo(models.Watchlist, {
       foreignKey: "watchlist_id"
     })        
   };

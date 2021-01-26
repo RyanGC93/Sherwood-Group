@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     Stock.belongsTo(models.Portfolio, {
       foreignKey: "stock_id"
     })    
-    Stock.belongsTo(models.Watched_stocks, {
+    Stock.belongsTo(models.Watched_stock, {
       foreignKey: "stock_id"
     })        
     Stock.belongsTo(models.Transaction_history, {

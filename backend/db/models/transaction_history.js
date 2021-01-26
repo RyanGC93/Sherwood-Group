@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER
   }, {});
   Transaction_history.associate = function(models) {
-    Transaction_history.hasMany(models.Stocks, {
+    Transaction_history.hasMany(models.Stock, {
       foreignKey: "stock_id",
       onDelete: 'cascade',
       hooks: true,

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER
   }, {});
   Watchlist.associate = function(models) {
-    Watchlist.hasMany(models.Watched_stocks, {
+    Watchlist.hasMany(models.Watched_stock, {
       foreignKey: "watchlist_id",
       onDelete: 'cascade',
       hooks: true,

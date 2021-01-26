@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     buying_power: {
-      type: DataTypes.Integer,
+      type: DataTypes.INTEGER,
       allowNull: true,
     }, 
     hashedPassword: {
@@ -93,6 +93,7 @@ module.exports = (sequelize, DataTypes) => {
       username,
       firstname,
       lastname,
+      hashedPassword,
       email,
     });
     return await User.scope('currentUser').findByPk(user.id);

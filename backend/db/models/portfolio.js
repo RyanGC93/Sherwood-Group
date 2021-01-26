@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     qty_owned: DataTypes.INTEGER
   }, {});
   Portfolio.associate = function(models) {
-    Portfolio.hasMany(models.Stocks, {
+    Portfolio.hasMany(models.Stock, {
       foreignKey: "stock_id",
       onDelete: 'cascade',
       hooks: true,
