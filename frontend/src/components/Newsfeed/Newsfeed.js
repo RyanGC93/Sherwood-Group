@@ -1,9 +1,7 @@
 import LineGraph from '../LineGraph/LineGraph';
 // import {LineGraph} from '../LineGraph/LineGraph'
-
+// import {key} from "../apiInfo.js"
 function Newsfeed(){
-
-
 
     return (
         <div className="newsfeed">

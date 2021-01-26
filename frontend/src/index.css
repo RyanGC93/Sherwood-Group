@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Capsule Sans Text,-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -.1px;
+    line-height: 20px;
+    margin: 0;
+}
+
