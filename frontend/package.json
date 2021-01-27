@@ -15,6 +15,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-search-autocomplete": "^5.0.2",
+    "react-svg": "^11.2.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
