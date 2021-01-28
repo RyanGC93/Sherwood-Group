@@ -7,7 +7,7 @@ function Newsfeed(){
     return (
         <div className="newsfeed">
             <div className="newsfeed__contianer">,
-                <div clasName="assest_charts">
+                <div className="assest_charts">
                     <div className="userAssets_overview">
                         <h1>Total Portfolio Value</h1>
                         <p>Stock Gaines/losses</p>
