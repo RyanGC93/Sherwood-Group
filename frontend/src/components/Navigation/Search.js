@@ -2,7 +2,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import React from 'react'
 import "./Search.css" 
 import {searchOptions} from './SearchOptions.js'
-
+import news from '../../utils/newsApi.js'
 function SearchBar() {
   
   const items = searchOptions
@@ -14,11 +14,15 @@ function SearchBar() {
 
   }
   let styling = {
-    backgroundColor: "#0D1117"
+    backgroundColor: "#0D1117",
+    color: "white",
+    hoverBackgroundColor: "#212121"
+
   }
 
   const handleOnSelect = (item) => {
     // the item selected
+    news()
     console.log('handle on select')
     console.log(item)
   }

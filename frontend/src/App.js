@@ -6,10 +6,12 @@ import Navigation from './components/Navigation';
 import NewsFeed from './components/Newsfeed/Newsfeed'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import StockDetailPage from './components/StockDetailPage/StockDetailPage'
+import StockNewsPage from './components/StockNewsPage/StockNewsPage'
 import {Switch, Route,Redirect} from 'react-router-dom'
 import { restoreUser, loadAuthToken } from './store/session';
 import { ProtectedRoute, PrivateRoute } from "./utils/route_protect_util";
 import SignupFormPage from "./components/SignupFormPage";
+import Spinner from './assests/Spinner.js'
 
 function App({needsAuth,loadAuthToken}) {
   const dispatch = useDispatch();
@@ -30,12 +32,12 @@ function App({needsAuth,loadAuthToken}) {
           component={NewsFeed}
         />
         <PrivateRoute
-          path="/stocks:stockId"
+          path="/stocks/:stockId"
           needsAuth={needsAuth}
-          component={NewsFeed}
+          component={StockDetailPage}
         />        
         <PrivateRoute
-          path="/news:stockId"
+          path="/news/:stockId"
           needsAuth={needsAuth}
           component={NewsFeed}
         />             
