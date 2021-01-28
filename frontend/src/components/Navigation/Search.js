@@ -6,16 +6,15 @@ import {searchOptions} from './SearchOptions.js'
 function SearchBar() {
   
   const items = searchOptions
-
-
-
-
   const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
     // the string searched and for the second the results.
     console.log('handle on search')
     console.log(string, results)
 
+  }
+  let styling = {
+    backgroundColor: "#0D1117"
   }
 
   const handleOnSelect = (item) => {
@@ -28,6 +27,7 @@ function SearchBar() {
 
     console.log('handle on Focus')
     console.log('Focused')
+
   }
 
   const handleOnEnter = (e) => {
@@ -45,7 +45,9 @@ function SearchBar() {
     >
       {/* <header className="App-header"> */}
         <div style={{ width: 400 }}>
-          <ReactSearchAutocomplete
+        <ReactSearchAutocomplete
+            styling={styling}
+            className="search-bar"
             items={items}
             onSearch={handleOnSearch}
             onSelect={handleOnSelect}

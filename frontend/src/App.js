@@ -27,7 +27,17 @@ function App({needsAuth,loadAuthToken}) {
           needsAuth={needsAuth}
           component={NewsFeed}
         />
-		    <Route exact path="/signup">
+        <PrivateRoute
+          path="/stocks:stockId"
+          needsAuth={needsAuth}
+          component={NewsFeed}
+        />        
+        <PrivateRoute
+          path="/news:stockId"
+          needsAuth={needsAuth}
+          component={NewsFeed}
+        />             
+		<Route exact path="/signup">
           <SignupFormPage />
         </Route>
 		 

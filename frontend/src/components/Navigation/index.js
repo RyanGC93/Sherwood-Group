@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { ReactSVG } from 'react-svg'
-import Logo from '../../assests/icon.svg'
+import SvgLogo from '../../assests/IconSvg'
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
@@ -36,11 +35,9 @@ const Navigation = ({ isLoaded }) => {
     <nav className="navbar">
       <ul className="navbar__nav-links">
         <li className="navbar__nav-links--navlink">
-          <NavLink to="/" exact>Home</NavLink>
+          <SvgLogo /> 
         </li>
-        {/* <Logo /> */}
-        <ReactSVG src="{Logo}" />
-        <img src={Logo} width={25} />
+
         
         <SearchBar />
         <a href="/">Free Stocks</a>

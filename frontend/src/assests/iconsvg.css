@@ -1,0 +1,7 @@
+.svg-container:hover {
+    cursor: pointer;
+}
+
+svg:hover g{
+    fill: green
+}
