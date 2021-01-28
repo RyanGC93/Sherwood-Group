@@ -40,10 +40,10 @@ const Navigation = ({ isLoaded }) => {
 
         
         <SearchBar />
-        <a href="/">Free Stocks</a>
+
         <a href="/">PortFolio</a>
         <a href="/">Cash</a>
-        <a href="/">Messages</a>
+
         <a href="/">Account</a>        
         {isLoaded && sessionLinks}
       </ul>

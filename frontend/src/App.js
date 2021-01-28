@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // import  from './components/Newsfeed/Newsfeed'
 import Navigation from './components/Navigation';
 import NewsFeed from './components/Newsfeed/Newsfeed'
+import PageNotFound from './components/PageNotFound/PageNotFound'
+import StockDetailPage from './components/StockDetailPage/StockDetailPage'
 import {Switch, Route,Redirect} from 'react-router-dom'
 import { restoreUser, loadAuthToken } from './store/session';
 import { ProtectedRoute, PrivateRoute } from "./utils/route_protect_util";
@@ -37,9 +39,11 @@ function App({needsAuth,loadAuthToken}) {
           needsAuth={needsAuth}
           component={NewsFeed}
         />             
-		<Route exact path="/signup">
+		    <Route exact path="/signup">
           <SignupFormPage />
         </Route>
+        <Route path="*" component={PageNotFound} />
+        <Redirect to="/"/>
 		 
       </Switch>	
     </>
