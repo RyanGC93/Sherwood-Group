@@ -36,7 +36,7 @@ const Root = () => {
 
 ReactDOM.render(
   <React.StrictMode>
-	<Favicon url="http://oflisback.github.io/react-favicon/public/img/github.ico" />  
+	<Favicon url="https://raw.githubusercontent.com/RyanGC93/Sherwood-Group/Front-end-components/frontend/src/favicon.ico" />  
     <Root />
   </React.StrictMode>,
   document.getElementById('root')

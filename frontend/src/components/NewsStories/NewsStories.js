@@ -1,4 +1,8 @@
 // import key from "../apiInfo.js"
+import { useHistory } from "react-router-dom"
+
+
+// import key from "../apiInfo.js"
 import React, { useState, useEffect } from "react";
 import news from '../../utils/newsApi.js'
 import "./newsStories.css"
@@ -9,6 +13,8 @@ function NewsStories() {
 	const [articles, setArticles] = useState([]);
 	const [isLoading, setIsLoading] = useState([])
 		
+	const history = useHistory()
+
 	useEffect(() => { 
 		const fetchTopStories = async () => {
 			const { articles } = await news()
@@ -29,7 +35,10 @@ function NewsStories() {
 		}
 	}
 
+	const articleRedirect = (url) => {
 
+		// window.location.replace(`${url}`)
+	}
     
    
    
@@ -40,12 +49,17 @@ function NewsStories() {
 				<div>
 					{articles.map(article => { 
 						return (
-							<div className="article-holder">
-								<h3 classname="article__source">{article.source.name}</h3>
-								<h2 className="article__title">{article.title}</h2>
-								<div>{article.url}</div>
+							<div className="article-holder" onClick={articleRedirect(article.url)}>
+								<div>
+
+								</div>
+								<p className="article__title">{article.title}</p>
+								<div>
+									<h4 className="article__source">{article.source.name}</h4>
+
+									<p className='article__date'>{article.publishedAt}</p>
+								</div>
 								<img src={article.urlToImage}/>
-									<a href={article.url}>link</a>
 								<div>
 									<p className="article__content">
 										{article.content}
@@ -54,7 +68,6 @@ function NewsStories() {
 										{article.description}
 									</p>									
 								</div>
-								<p className='article__date'>{article.publishedAt}</p>
 								<div className='articleImg__container'>
 									
 								</div>

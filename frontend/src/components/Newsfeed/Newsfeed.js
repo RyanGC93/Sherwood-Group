@@ -1,8 +1,13 @@
+
 import LineGraph from '../LineGraph/LineGraph';
+
 import GraphTimeLine from '../GraphTimeLine/GraphTimeLine'
 // import {LineGraph} from '../LineGraph/LineGraph'
 // import {key} from "../apiInfo.js"
 import NewsStories from '../NewsStories/NewsStories'
+import "./newsfeed.css"
+
+
 function Newsfeed(){
 
     return (

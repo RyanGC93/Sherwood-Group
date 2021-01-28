@@ -4,10 +4,15 @@ body{
 
 img{
     height: 100px;
-    width: 100px
+    width: 100px;
+    right:0pxn
 }
 
 .article-holder{
-    background-color: grey;
+    border-top: 1px solid gray;
     margin-top: 30px
 }
+.article-holder:hover{
+    background-color: gray;
+}
+
