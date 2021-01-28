@@ -25,8 +25,10 @@ function App({needsAuth,loadAuthToken}) {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
+
       <Switch>
         <PrivateRoute
+        	
           exact path="/"
           needsAuth={needsAuth}
           component={NewsFeed}
