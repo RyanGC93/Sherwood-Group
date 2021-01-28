@@ -1,0 +1,18 @@
+.notFound-container{
+    position: fixed;
+    width: 700px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(http://www.reactiongifs.us/wp-content/uploads/2015/04/nothing_to_see_here_naked_gun.gif);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: contain;
+}

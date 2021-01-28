@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Lazytangent/aA_authenticate-me/issues"
   },
-  "homepage": "https://github.com/Lazytangent/aA_authenticate-me#readme"
+  "homepage": "https://github.com/Lazytangent/aA_authenticate-me#readme",
+  "dependencies": {
+    "react-favicon": "0.0.18"
+  }
 }

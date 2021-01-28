@@ -8,7 +8,7 @@ const news  = async() => {
     if (res.ok) {
         const data = await res.json()
         console.log('Success', data, res)
-        return data;
+        return data
     }
     else {
  	   console.log('UNSUCESSFULE')

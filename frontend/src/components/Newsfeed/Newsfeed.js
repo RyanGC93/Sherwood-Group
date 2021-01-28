@@ -2,6 +2,7 @@ import LineGraph from '../LineGraph/LineGraph';
 import GraphTimeLine from '../GraphTimeLine/GraphTimeLine'
 // import {LineGraph} from '../LineGraph/LineGraph'
 // import {key} from "../apiInfo.js"
+import NewsStories from '../NewsStories/NewsStories'
 function Newsfeed(){
 
     return (
@@ -31,6 +32,7 @@ function Newsfeed(){
                 </div>                
                 <div className="newsStories">
                     <h1>News</h1>
+                    <NewsStories/>
                     
                 </div>
 

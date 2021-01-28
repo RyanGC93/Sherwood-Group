@@ -19,12 +19,17 @@ function SearchBar() {
     hoverBackgroundColor: "#212121"
 
   }
+  const fetchTopStories = async () => {
+    const {articles} = await news()
+    console.log("topStories", articles)
+  }
 
   const handleOnSelect = (item) => {
     // the item selected
-    news()
-    console.log('handle on select')
-    console.log(item)
+     fetchTopStories()
+    
+    // console.log('handle on select')
+    // console.log(item)
   }
 
   const handleOnFocus = () => {
@@ -37,7 +42,7 @@ function SearchBar() {
   const handleOnEnter = (e) => {
     if (e.key === 'Enter') {
       // console.log(item);
-      console.log("enter")
+      alert("Please select option from dropdown search")
     }
   }
 

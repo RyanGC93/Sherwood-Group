@@ -1,0 +1,13 @@
+body{
+    color: white
+}
+
+img{
+    height: 100px;
+    width: 100px
+}
+
+.article-holder{
+    background-color: grey;
+    margin-top: 30px
+}
