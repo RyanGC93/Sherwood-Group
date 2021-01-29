@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 
 // import key from "../apiInfo.js"
 import React, { useState, useEffect } from "react";
-import news from '../../utils/newsApi.js'
+import {news} from '../../utils/newsApi.js'
 import "./newsStories.css"
 
 

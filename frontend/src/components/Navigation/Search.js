@@ -1,48 +1,29 @@
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import React from 'react'
 import "./Search.css" 
-import {searchOptions} from './SearchOptions.js'
-import news from '../../utils/newsApi.js'
+import { searchOptions } from './SearchOptions.js'
+import {useHistory} from 'react-router-dom'
 function SearchBar() {
-  
+  const history = useHistory()
   const items = searchOptions
-  const handleOnSearch = (string, results) => {
-    // onSearch will have as the first callback parameter
-    // the string searched and for the second the results.
-    console.log('handle on search')
-    console.log(string, results)
 
-  }
   let styling = {
     backgroundColor: "#0D1117",
     color: "white",
     hoverBackgroundColor: "#212121"
 
   }
-  const fetchTopStories = async () => {
-    const {articles} = await news()
-    console.log("topStories", articles)
-  }
-
-  const handleOnSelect = (item) => {
+  const handleOnSelect = ( item ) => {
     // the item selected
-     fetchTopStories()
-    
-    // console.log('handle on select')
-    // console.log(item)
+     const stock =item.name
+    history.push(`/stocks/${stock}`)
   }
 
-  const handleOnFocus = () => {
-
-    console.log('handle on Focus')
-    console.log('Focused')
-
-  }
 
   const handleOnEnter = (e) => {
     if (e.key === 'Enter') {
-      // console.log(item);
-      alert("Please select option from dropdown search")
+
+      alert("Please select option from the dropdown search")
     }
   }
 
@@ -58,9 +39,7 @@ function SearchBar() {
             styling={styling}
             className="search-bar"
             items={items}
-            onSearch={handleOnSearch}
             onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
             fuseOptions={{ keys: ["name","description"]}}
             resultStringKeyName="stockWithDescription"
             autoFocus

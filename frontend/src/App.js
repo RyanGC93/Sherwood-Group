@@ -34,7 +34,7 @@ function App({needsAuth,loadAuthToken}) {
           component={NewsFeed}
         />
         <PrivateRoute
-          path="/stocks/:stockId"
+          exact path="/stocks/:stockTicker"
           needsAuth={needsAuth}
           component={StockDetailPage}
         />        
