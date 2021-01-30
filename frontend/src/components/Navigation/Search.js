@@ -14,7 +14,6 @@ function SearchBar() {
 
   }
   const handleOnSelect = ( item ) => {
-    // the item selected
      const stock =item.name
     history.push(`/stocks/${stock}`)
   }
@@ -22,7 +21,6 @@ function SearchBar() {
 
   const handleOnEnter = (e) => {
     if (e.key === 'Enter') {
-
       alert("Please select option from the dropdown search")
     }
   }
@@ -30,10 +28,8 @@ function SearchBar() {
   return (
     <div className="search__bar"
       onKeyDown={handleOnEnter}
-      
       tabIndex="0"
     >
-      {/* <header className="App-header"> */}
         <div style={{ width: 400 }}>
         <ReactSearchAutocomplete
             styling={styling}
@@ -45,7 +41,6 @@ function SearchBar() {
             autoFocus
           />
         </div>
-      {/* </header> */}
     </div>
   )
 }

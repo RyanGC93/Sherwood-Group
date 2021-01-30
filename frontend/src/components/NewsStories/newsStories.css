@@ -3,16 +3,55 @@ body{
 }
 
 img{
-    height: 100px;
-    width: 100px;
+    height:120px;
+    width: 120px;
     right:0pxn
 }
 
 .article-holder{
+    padding-top: 10px;
     border-top: 1px solid gray;
-    margin-top: 30px
+    padding-bottom: 30px
 }
+.news-container {
+    left: 30px
+}
+
 .article-holder:hover{
     background-color: gray;
 }
+
+
+.article__title {
+	font-size: 20px;
+}
+
+.article__row {
+    position: relative;
+    top: 20px;
+    left: 150px;
+    display:flex;
+    font-size: 15px;
+    align-items: center;
+}
+
+.article__date {
+    margin-left:260px
+}
+
+.article__content {
+    position: relative;
+    left: 150px;
+    bottom: 100px;
+    width: 500px
+}
+
+.article_holder {
+    height: 140px
+}
+
+.article__source {
+    left: 20px;
+}
+
 

@@ -49,27 +49,24 @@ function NewsStories() {
 				<div>
 					{articles.map(article => { 
 						return (
-							<div className="article-holder" onClick={articleRedirect(article.url)}>
+							<div className="article-holder news-container" onClick={articleRedirect(article.url)}>
 								<div>
 
 								</div>
-								<p className="article__title">{article.title}</p>
-								<div>
-									<h4 className="article__source">{article.source.name}</h4>
-
-									<p className='article__date'>{article.publishedAt}</p>
+								<div className="article__title">{article.title}</div>
+								<div className="article__row">
 								</div>
-								<img src={article.urlToImage}/>
-								<div>
-									<p className="article__content">
-										{article.content}
-									</p>
+								<div className="article_holder">
+									<div className="article__row">
+										<div className="article__source">{article.source.name}</div>
+
+										<div className='article__date'>{article.publishedAt}</div>
+
+									</div>
+									<img src={article.urlToImage}/>
 									<p className="article__content">
 										{article.description}
 									</p>									
-								</div>
-								<div className='articleImg__container'>
-									
 								</div>
 							</div>
 						)

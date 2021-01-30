@@ -1,7 +1,15 @@
 .navbar {
   padding: 0.25rem;
   display: flex;
-  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+a {
+  font-size: 20px;
+  margin-left: 20px;
+}
+.svg-container{
+  padding: 0 10px 0 5px
 }
 
 .navbar__nav-links {

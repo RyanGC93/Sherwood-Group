@@ -33,20 +33,22 @@ const Navigation = ({ isLoaded }) => {
 
   return (
     <nav className="navbar">
-      <ul className="navbar__nav-links">
+      {/* <ul className="navbar__nav-links">
         <li className="navbar__nav-links--navlink">
-          <SvgLogo /> 
-        </li>
+      </li> */}
+      <div className="svg-container">
+        <SvgLogo /> 
+      </div>
 
-        
-        <SearchBar />
+      
+      <SearchBar />
 
-        <a href="/">PortFolio</a>
-        <a href="/">Cash</a>
+      <a href="/">Portfolio</a>
+      <a href="/">Cash</a>
 
-        <a href="/">Account</a>        
-        {isLoaded && sessionLinks}
-      </ul>
+      <a href="/">Account</a>        
+      {isLoaded && sessionLinks}
+      {/* </ul> */}
     </nav>
   )
 };
