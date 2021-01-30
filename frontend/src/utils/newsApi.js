@@ -4,8 +4,32 @@ const polygonApiKeyTwo = "1Mphgudtb4SQvGUGfeGwHG5tXyHQZkuq"
 const polygonApiKeyOne = "QNI33gPsUqiEedC3ZHQTgo7now21EVao"
 const newsApiKey = 'bb39957845924d94b982ac37d505afc0'
 const finhubApiKey = 'c05kui748v6uiu318uh0'
+const yahooApiKey = 'd518fefe68mshc49f55a05174023p17ab61jsn8f5081e108e1'
 
 
+
+
+
+const dailyMOvers  = async() => {
+
+	const url = fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-movers?region=US&lang=en-US&start=0&count=6", {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-key": `${yahooApiKey}`,
+			"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+		}
+	})
+    const res = await fetch(url)
+    if (res.ok) {
+        const data = await res.json()
+        console.log('dailyMovers', data, res)
+        return data
+    }
+    else {
+ 	   console.log('UNSUCESSFULE')
+        return Promise.reject(res.status);
+   }
+}
 
 
 const news  = async() => {
@@ -123,5 +147,5 @@ const realTimeStockQuotes  = async(ticker) => {
 //         return Promise.reject(res.status); 
 //    }
 // }
-export { news, realTimeStockQuotes, companyFinancials, companyNews, companyDetails, stockQuotes}
+export { news, dailyMovers, realTimeStockQuotes, companyFinancials, companyNews, companyDetails, stockQuotes}
 
