@@ -57,11 +57,11 @@ const StockDetails=() => {
 
 			{loading}
 			<div className="about-container">
-				<h2>About</h2>
+				<div className="company-header">About</div>
 					<div className="image-container" onClick={articleRedirect(stockDetails.url)}>
 						<img src={stockDetails.logo} />
+						<div classname="company-description">{stockDetails.description}</div>
 					</div>
-					<div classname="company-description">{stockDetails.description}</div>
 				<div className="company-stats">
 					<div>
 						<h4>CEO</h4>
@@ -73,7 +73,7 @@ const StockDetails=() => {
 					</div>
 					<div>
 						<h4>Headquarters</h4>
-						<p>{stockDetails.hq_state}, {stockDetails.hq_country}</p>
+						<p>{stockDetails.hq_state} {stockDetails.hq_country}</p>
 					</div>
 					<div>
 						<h4>Sector</h4>

@@ -1,0 +1,22 @@
+.conpany-header {
+    font-size: 30px
+}
+
+.company-stats {
+    width: 50%;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+}
+.company-stats-extra {
+    display:grid;
+    grid-template-columns: auto auto auto auto
+    
+}
+
+.image-container{
+    display:flex
+  }
+
+.about-container{
+    width: 60%
+}
