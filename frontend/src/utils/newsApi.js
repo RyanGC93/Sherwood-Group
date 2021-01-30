@@ -5,25 +5,31 @@ const polygonApiKeyOne = "QNI33gPsUqiEedC3ZHQTgo7now21EVao"
 const newsApiKey = 'bb39957845924d94b982ac37d505afc0'
 const finhubApiKey = 'c05kui748v6uiu318uh0'
 const yahooApiKey = 'd518fefe68mshc49f55a05174023p17ab61jsn8f5081e108e1'
+const finacialModelingApiKey = '3cda349d1d529cdb956e572387e18434'
 
 
 
 
+const dailyGainers  = async() => {
 
-const dailyMOvers  = async() => {
-
-	const url = fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-movers?region=US&lang=en-US&start=0&count=6", {
-		"method": "GET",
-		"headers": {
-			"x-rapidapi-key": `${yahooApiKey}`,
-			"x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
-		}
-	})
-    const res = await fetch(url)
+    const res = await fetch(`https://financialmodelingprep.com/api/v3/stock/gainers?apikey=${finacialModelingApiKey}`)
     if (res.ok) {
         const data = await res.json()
         console.log('dailyMovers', data, res)
-        return data
+        return data.mostGainerStock
+    }
+    else {
+ 	   console.log('UNSUCESSFULE')
+        return Promise.reject(res.status);
+   }
+}
+const dailyMostActive  = async() => {
+
+    const res = await fetch(`https://financialmodelingprep.com/api/v3/actives?apikey=${finacialModelingApiKey}`)
+    if (res.ok) {
+        const data = await res.json()
+        console.log('dailyMostActive', data, res)
+        return data.mostGainerStock
     }
     else {
  	   console.log('UNSUCESSFULE')
@@ -31,6 +37,20 @@ const dailyMOvers  = async() => {
    }
 }
 
+
+const dailyLosers  = async() => {
+
+    const res = await fetch(`https://financialmodelingprep.com/api/v3/losers?apikey=${finacialModelingApiKey}`)
+    if (res.ok) {
+        const data = await res.json()
+        console.log('dailyLosers', data, res)
+        return data.mostGainerStock
+    }
+    else {
+ 	   console.log('UNSUCESSFULE')
+        return Promise.reject(res.status);
+   }
+}
 
 const news  = async() => {
 	const newsUrl = `https://newsapi.org/v2/everything?sources=barrons,market-watch,bazinga,bloomberg,cnbc,the-wall-street-journal,reuters&apiKey=${newsApiKey}`
@@ -147,5 +167,5 @@ const realTimeStockQuotes  = async(ticker) => {
 //         return Promise.reject(res.status); 
 //    }
 // }
-export { news, dailyMovers, realTimeStockQuotes, companyFinancials, companyNews, companyDetails, stockQuotes}
+export { news, dailyGainers,dailyLosers, dailyMostActive, realTimeStockQuotes, companyFinancials, companyNews, companyDetails, stockQuotes}
 

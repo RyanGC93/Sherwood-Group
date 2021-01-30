@@ -19,11 +19,12 @@
 }
 
 .timeline__option{
+	margin-left: 10px;
 	display: flex
 	
 }
 
-.timeline__option:hover{
+.timeline__option:mouseover{
 	color: green;
 	
 }

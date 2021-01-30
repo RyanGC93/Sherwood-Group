@@ -1,6 +1,6 @@
 
 import LineGraph from '../LineGraph/LineGraph';
-
+import TopMovers from '../TopMovers/TopMovers'
 import GraphTimeLine from '../GraphTimeLine/GraphTimeLine'
 // import {LineGraph} from '../LineGraph/LineGraph'
 // import {key} from "../apiInfo.js"
@@ -33,6 +33,7 @@ function Newsfeed(){
                 </div>
                 <div className="topMovers">
                     <h1>Top Movers</h1>
+                    <TopMovers />
                     
                 </div>                
                 <div className="newsStories">
