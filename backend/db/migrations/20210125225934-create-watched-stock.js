@@ -11,17 +11,22 @@ module.exports = {
       watchlist_id: {
         type: Sequelize.INTEGER
       },
-      stock_id: {
-        type: Sequelize.INTEGER
+      stock_ticker: {
+        type: Sequelize.STRING
       },
+      stock_name: {
+        type: Sequelize.STRING
+      },      
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
+      }      
     });
   },
   down: (queryInterface, Sequelize) => {

@@ -2,7 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Watched_stock = sequelize.define('Watched_stock', {
     watchlist_id: DataTypes.INTEGER,
-    stock_id: DataTypes.INTEGER
+    stock_ticker: DataTypes.STRING,
+    stock_name: DataTypes.STRING,
   }, {});
   Watched_stock.associate = function(models) {
     Watched_stock.hasMany(models.Stock, {

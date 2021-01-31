@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Watchlist = sequelize.define('Watchlist', {
-    watchlist: DataTypes.STRING,
+    watchlist_name: DataTypes.STRING,
     user_id: DataTypes.INTEGER
   }, {});
   Watchlist.associate = function(models) {

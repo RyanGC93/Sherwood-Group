@@ -4,38 +4,48 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Users', [
-      {
-        username: 'Demo-lition',
+      let users = [{
+        username: 'Demo',
         firstname: 'Demo',
         lastname: 'User' ,
-        email: 'demo@user.io',               
-		buying_power: 123123,
+        email: 'demo@demo.com',               
+		    buying_power: 123123,
         hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        username: 'FakeUser1',
         firstname: 'Demos',
         lastname: 'Usser',        
-        username: 'FakeUser1',
+        email: faker.internet.email(),
         buying_power: 1123,
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
       },
       {
-        email: faker.internet.email(),
+        username: 'FakeUser2',
         firstname: 'Demossdsd',
         lastname: 'Ussdser',  
-        username: 'FakeUser2',
+        email: faker.internet.email(),
         buying_power: 91123,
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
-      },
-    ], {});
+        }]
+        for (let i = 0; i < 45; i++) {
+          let newUser = {
+            username: faker.internet.userName(),
+            firstname: faker.name.firstName(),
+            lastname: faker.name.lastName(),
+            email: faker.internet.email(),
+            buying_power: faker.random.number(),
+            // hashedPassword: await bcrypt.hash(`password${i}`, 10),
+            hashedPassword: bcrypt.hashSync(faker.internet.password()),
+            // createdAt: new Date(),
+            // updatedAt: new Date(),
+          };
+          users.push(newUser)
+        }
+        return queryInterface.bulkInsert('Users',users, {});
   },
 
   down: (queryInterface, Sequelize) => {
-    const Op = Sequelize.Op;
-    return queryInterface.bulkDelete('Users', {
-      username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
-    }, {});
+    return queryInterface.bulkDelete('Users', null, {});
   }
 };

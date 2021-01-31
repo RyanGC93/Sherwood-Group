@@ -1,6 +1,6 @@
 const searchOptions =
 [ {id:1,name:"GPRE", description:"GREEN PLAINS INC",stockWithDescription:"GPRE       GREEN PLAINS INC"} , 
-   {id:2,name:"BOOM", description:"DMC GLOBAL INC",stockWithDescription:"BOOM       DMC GLOBAL INC"} , 
+[<65;30;16M[<65;30;16M[<65;30;16M[<65;30;16M[<65;30;16M[<65;30;16M[<65;30;16M[<65;30;16M   {id:2,name:"BOOM", description:"DMC GLOBAL INC",stockWithDescription:"BOOM       DMC GLOBAL INC"} , 
    {id:3,name:"NAVI", description:"NAVIENT CORP",stockWithDescription:"NAVI       NAVIENT CORP"} , 
    {id:4,name:"RAIL", description:"FREIGHTCAR AMERICA INC",stockWithDescription:"RAIL       FREIGHTCAR AMERICA INC"} , 
    {id:5,name:"CDNS", description:"CADENCE DESIGN SYS INC",stockWithDescription:"CDNS       CADENCE DESIGN SYS INC"} , 
