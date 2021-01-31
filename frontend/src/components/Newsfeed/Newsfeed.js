@@ -6,9 +6,10 @@ import GraphTimeLine from '../GraphTimeLine/GraphTimeLine'
 // import {key} from "../apiInfo.js"
 import NewsStories from '../NewsStories/NewsStories'
 import "./newsfeed.css"
+import React, { useState, useEffect } from "react";
 
-
-function Newsfeed(){
+function Newsfeed() {
+    const [isLoading, setIsLoading] = useState([])
 
     return (
         <div className="newsfeed">
@@ -32,8 +33,7 @@ function Newsfeed(){
                     </div>
                 </div>
                 <div className="topMovers">
-                    <h1>Top Movers</h1>
-                    <TopMovers />
+                    {/* <TopMovers /> */}
                     
                 </div>                
                 <div className="newsStories">

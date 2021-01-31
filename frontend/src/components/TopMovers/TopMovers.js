@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 
 
 const MoverDetails = () => {
-
+	const history = useHistory()
 	const [isLoading, setIsLoading] = useState([])
 	const [dailyGainerList, setDailyGainersList] = useState([])	
 	const [dailyLosersList, setDailyLosersList] = useState([])			
@@ -31,30 +31,78 @@ const MoverDetails = () => {
 		if (isLoading) {
 			return (
 				<>
-					<h1>Articles are being rendered</h1>
+					<div>Articles are being rendered</div>
 				</>
 			)
 		}
 	}
 
-	const articleRedirect = (url) => {
-	///	window.location.replace(`${url}`)
+	const stockRedirect = (stockGainer) => {
+		// const ticker = stockGainer.ticker
+		// history.push(`/stock/${ticker}`)
 	}
-
+    
+   
    
     return (
 		<div>
-
 			{loading}
-			<div className="about-container">
+			<div className="top-gainers">
+				<h1>Daily Top Gainers</h1>
+					{dailyGainerList.map(stockGainer => { 
+						return (
+							<div className="stock-gainer" onClick={stockRedirect(stockGainer)}>
+								<div className="company-name">
+									{stockGainer.companyName}
+								</div>
+								<div className="stock-ticker">Ticker: {stockGainer.ticker}</div>
+								<div className="stats-container">
+									<div className="stock-price">Stock Price: {stockGainer.price}</div>
+									<div className="stock-change">Stock Changes:{stockGainer.changes}</div>
+									<div className="stock-change-percentage">{stockGainer.changesPercentage}</div>
+								</div>
+							</div>
+						)
+					})}
 			</div>
-			
-    	</div>
-        
+			<div className="top-losers">
+				<h1>Daily Top Loser</h1>
+					{dailyLosersList.map(stockLoser => { 
+						return (
+							<div className="stock-Loser" onClick={stockRedirect(stockLoser)}>
+								<div className="company-name">
+									{stockLoser.companyName}</div>
+								<div className="stock-ticker">Ticker: {stockLoser.ticker}</div>
+								<div className="stats-container">
+									<div className="stock-price">Stock Price: {stockLoser.price}</div>
+									<div className="stock-change">Stock Changes:{stockLoser.changes}</div>
+									<div className="stock-change-percentage">{stockLoser.changesPercentage}</div>
+								</div>
+							</div>
+						)
+					})}
+			</div>	
+			<div className="top-movers">
+				<h1>Daily Top Movers</h1>
+					{dailyActiveList.map(stockActive => { 
+						return (
+							<div className="stock-Active" onClick={stockRedirect(stockActive)}>
+								<div className="company-name">
+									{stockActive.companyName}
+								<div className="stock-ticker">Ticker: {stockActive.ticker}</div>	
+								</div>
+								<div className="stats-container">
+									<div className="stock-price">Stock Price: {stockActive.price}</div>
+									<div className="stock-change">Stock Changes:{stockActive.changes}</div>
+									<div className="stock-change-percentage">{stockActive.changesPercentage}</div>
+								</div>
+							</div>
+						)
+					})}
+				</div>				
+    	</div>     
     )
-
 }
-
 
 
 

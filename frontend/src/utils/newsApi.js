@@ -16,7 +16,8 @@ const dailyGainers  = async() => {
     if (res.ok) {
         const data = await res.json()
         console.log('dailyMovers', data, res)
-        return data.mostGainerStock
+        return data.mostGainerStock.slice(0,5)
+
     }
     else {
  	   console.log('UNSUCESSFULE')
@@ -29,7 +30,7 @@ const dailyMostActive  = async() => {
     if (res.ok) {
         const data = await res.json()
         console.log('dailyMostActive', data, res)
-        return data.mostGainerStock
+        return data.slice(0,5)
     }
     else {
  	   console.log('UNSUCESSFULE')
@@ -44,7 +45,7 @@ const dailyLosers  = async() => {
     if (res.ok) {
         const data = await res.json()
         console.log('dailyLosers', data, res)
-        return data.mostGainerStock
+        return data.slice(0,5)
     }
     else {
  	   console.log('UNSUCESSFULE')
