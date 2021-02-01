@@ -10,25 +10,24 @@ const WatchList = () => {
     const [watchlist, setWatchlist]= useState([])
     const user = useSelector((state) => state.session.user);
     console.log(stocks)
-
-    useEffect(() => {
-        dispatch(watchlistActions.getAllwatchlists())
-    }, [dispatch])
-    useEffect(() => {
-        if( user && stocks) setIsLoaded(true)
-
-
-
-
-
-    }, [user,stocks])
-    if(!isLoaded) return null
-
-    console.log(stocks)
+// 
+    // useEffect(() => {
+        // dispatch(watchlistActions.getAllwatchlists())
+    // }, [dispatch])
+    // useEffect(() => {
+        // if( user && stocks) setIsLoaded(true)
+// 
+// 
+// 
+// 
+// 
+    // }, [user,stocks])
 
 
 
-    if(isLoaded) return (
+
+
+    return (
 
         <div>
             {stocks[0]}

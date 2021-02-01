@@ -1,11 +1,12 @@
 import "./stockDetailPage.css"
-import { useHistory,useParams } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import {companyFinancials, realTimeStockQuotes, companyNews, companyDetails, stockQuotes} from '../../utils/newsApi.js'
 import React, { useState, useEffect } from "react";
 
 
 
 const StockDetails=() => {
+	const history = useHistory()
 	const [stockNews, setStockNews] = useState([]);
 	const [stockFinancials, setStockFinancials] = useState({});
 	const [stockDetails, setStockDetails] = useState([]);
@@ -49,6 +50,10 @@ const StockDetails=() => {
 
 	const articleRedirect = (url) => {
 	///	window.location.replace(`${url}`)
+	}
+	const handleClick = (e) => {
+		history.push(`/stock/details/${stockTicker}`)
+		console.log(stockTicker)
 	}
 
    
@@ -118,7 +123,10 @@ const StockDetails=() => {
 				</div>				
 
 			</div>
-	
+			<div>
+				<button>Buy Stock</button>
+				<button onClick={handleClick()}> Show more detail </button>
+			</div>
 			<div>
 					{stockNews.map(article => { 
 						return (

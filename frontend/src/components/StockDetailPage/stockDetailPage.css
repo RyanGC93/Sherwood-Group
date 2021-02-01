@@ -3,7 +3,7 @@
 }
 
 .company-stats {
-    width: 50%;
+    /* width: 50%; */
     display:grid;
     grid-template-columns: auto auto auto auto;
 }
@@ -18,5 +18,5 @@
   }
 
 .about-container{
-    width: 60%
+    width: 70%
 }

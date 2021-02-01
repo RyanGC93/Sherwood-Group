@@ -14,7 +14,7 @@ function SearchBar() {
 
   }
   const handleOnSelect = ( item ) => {
-     const stock =item.name
+     const stock = item.name
     history.push(`/stocks/${stock}`)
   }
 

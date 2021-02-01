@@ -1,6 +1,6 @@
 import {fetch} from './csrf';
 
-const ADD_WATCHLIST = 'watchlist/addWatchedStocks'
+// const ADD_WATCHLIST = 'watchlist/addWatchedStocks'
 const SET_WATCHLIST = 'watchlist/setWatchedStocks'
 
 const setWatchedStocks = (watchedStocks) => ({
@@ -16,14 +16,15 @@ const setWatchedStocks = (watchedStocks) => ({
 export const getAllwatchlists = () => async (dispatch) => {
     const res = await fetch('api/watchlist')
     const watchedlists = res.data
-    let normalizedList = {}
-    for(let i =0; i < watchedlists.length; i++){
-        const list = watchedlists[i]
-        normalizedList[list.id] = list
-    }
-    // const json = res.data
-    console.log('normalized', normalizedList)
-    dispatch(setWatchedStocks(watchedlists))
+    return watchedlists
+    // let normalizedList = {}
+    // for(let i =0; i < watchedlists.length; i++){
+        // const list = watchedlists[i]
+        // normalizedList[list.id] = list
+    // }
+    // // const json = res.data
+    // console.log('normalized', normalizedList)
+    // dispatch(setWatchedStocks(watchedlists))
 
 }
 

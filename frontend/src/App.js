@@ -11,6 +11,7 @@ import { restoreUser, loadAuthToken } from './store/session';
 import { ProtectedRoute, PrivateRoute } from "./utils/route_protect_util";
 import SignupFormPage from "./components/SignupFormPage";
 // import Spinner from './assests/Spinner.js'
+//import ProductDetail from "./components/ProductDetail/ProductDetail"
 
 function App({needsAuth,loadAuthToken}) {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ function App({needsAuth,loadAuthToken}) {
           needsAuth={needsAuth}
           component={StockDetailPage}
         />
+
         <PrivateRoute
           path="/news/:stockId"
           needsAuth={needsAuth}

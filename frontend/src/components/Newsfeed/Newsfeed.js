@@ -17,16 +17,16 @@ function Newsfeed() {
             <div className="newsfeed__contianer">
                 <div className="assest_charts">
                     <div className="userAssets_overview">
-                        <h1>Total Portfolio Value</h1>
-                        <p>Stock Gaines/losses</p>
+                        <h1>Total Portfolio Value $107,000</h1>
+                        <p>Stock Gaines/losses: +4%</p>
                     </div>
                     <LineGraph />
                     <GraphTimeLine />
                 </div>
-                    <WatchList />
+                    {/* <WatchList /> */}
                 <div>
                     <h1>BuyingPower</h1>
-                    <p>User BuyingPower $$$</p>
+                    <p>User Buying Power: $100,290</p>
                 </div>
                 <div className="popularLists">
                     <h1>Popular List</h1>
@@ -35,7 +35,7 @@ function Newsfeed() {
                     </div>
                 </div>
                 <div className="topMovers">
-                    {/* <TopMovers /> */}
+                    <TopMovers />
 
                 </div>
                 <div className="newsStories">

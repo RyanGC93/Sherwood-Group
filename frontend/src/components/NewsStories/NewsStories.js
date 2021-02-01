@@ -1,5 +1,4 @@
 // import key from "../apiInfo.js"
-import { useHistory } from "react-router-dom"
 
 
 // import key from "../apiInfo.js"
@@ -13,7 +12,7 @@ function NewsStories() {
 	const [articles, setArticles] = useState([]);
 	const [isLoading, setIsLoading] = useState([])
 		
-	const history = useHistory()
+
 
 	useEffect(() => { 
 		const fetchTopStories = async () => {
@@ -24,7 +23,7 @@ function NewsStories() {
 		}
 		fetchTopStories()
 		console.log(articles)
-	}, []) 
+	}, [articles]) 
 	const loading = () => {
 		if (isLoading) {
 			return (

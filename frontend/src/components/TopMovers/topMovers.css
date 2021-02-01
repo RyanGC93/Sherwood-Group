@@ -1,0 +1,38 @@
+.movers-row {
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.stock-ticker {
+    text-decoration: underline;
+}
+
+.stock-change-percentage-loser {
+    color:red;
+}
+
+.stock-change-percentage-gainer {
+    color: darkgreen
+}
+
+.blink {
+    color: purple;
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }
+
+.stock-gainer:hover {
+	background-color: darkgray
+}
+
+.stock-Loser:hover {
+	background-color: darygray
+}
+.stock-Active:hover {
+	background-color: darygray
+}
