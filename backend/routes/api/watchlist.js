@@ -3,25 +3,35 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const db = require('../../db/models');
-const {Watchlists} = db;
+const {Watchlist, Watched_stock} = db;
 
- 
+// router.use(requireAuth)
 
 // router.get("/", requireAuth, asyncHandler(async (req, res) =>{
 //     const {load} = await Watchlists.findAll()
 //        res.JSON({load})
-    
+
 //   })
 // );
 
 router.get(
   "/",
-  requireAuth,
+  // requireAuth,
   asyncHandler(async (req, res) => {
-    const watchedStocks = await Watchlists.findAll({
-      where: {userId: req.user.id},
+    // console.log(req, 'ddsdsadasdasd')
+    // const watchedStocks = await Watched_stock.findAll({
+    //   // where: {userId: req.user.id}
+    //   include: [{
+    //     model: Watchlist
+    //   }]
+    // });
+    const watchedStocks = await Watchlist.findAll({
+      // where: {userId: req.user.id}
+      include: [{
+        model: Watched_stock
+      }]
     });
-    res.json( watchedStocks );
+    res.json({ watchedStocks} );
   })
 );
 
@@ -56,7 +66,7 @@ router.delete(
         id: req.params.id,
       },
     });
-   
+
     if (watchedStock) {
       await watchedStock.destroy();
       res.json({ message: `Deleted  stock with id of ${req.params.id}.` });

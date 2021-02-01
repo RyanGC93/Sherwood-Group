@@ -2,6 +2,7 @@
 import LineGraph from '../LineGraph/LineGraph';
 import TopMovers from '../TopMovers/TopMovers'
 import GraphTimeLine from '../GraphTimeLine/GraphTimeLine'
+import WatchList from '../WatchList/Watchlist'
 // import {LineGraph} from '../LineGraph/LineGraph'
 // import {key} from "../apiInfo.js"
 import NewsStories from '../NewsStories/NewsStories'
@@ -22,7 +23,8 @@ function Newsfeed() {
                     <LineGraph />
                     <GraphTimeLine />
                 </div>
-                <div> 
+                    <WatchList />
+                <div>
                     <h1>BuyingPower</h1>
                     <p>User BuyingPower $$$</p>
                 </div>
@@ -34,18 +36,18 @@ function Newsfeed() {
                 </div>
                 <div className="topMovers">
                     {/* <TopMovers /> */}
-                    
-                </div>                
+
+                </div>
                 <div className="newsStories">
                     <h1>News</h1>
                     <NewsStories/>
-                    
+
                 </div>
 
             </div>
         </div>
     )
-	
+
 }
 
 export default Newsfeed
