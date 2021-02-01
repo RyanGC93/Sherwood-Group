@@ -16,7 +16,7 @@ function App({needsAuth,loadAuthToken}) {
   const dispatch = useDispatch();
   useEffect(() => {
   	dispatch(restoreUser()).then(() => setIsLoaded(true));
-  	loadAuthToken()
+
   }, [dispatch])
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -27,7 +27,7 @@ function App({needsAuth,loadAuthToken}) {
 
       <Switch>
         <PrivateRoute
-        	
+
           exact path="/"
           needsAuth={needsAuth}
           component={NewsFeed}
@@ -36,19 +36,19 @@ function App({needsAuth,loadAuthToken}) {
           exact path="/stocks/:stockTicker"
           needsAuth={needsAuth}
           component={StockDetailPage}
-        />        
+        />
         <PrivateRoute
           path="/news/:stockId"
           needsAuth={needsAuth}
           component={NewsFeed}
-        />             
+        />
 		    <Route exact path="/signup">
           <SignupFormPage />
         </Route>
         <Route path="*" component={PageNotFound} />
         <Redirect to="/"/>
-		 
-      </Switch>	
+
+      </Switch>
     </>
   );
 }
@@ -56,7 +56,7 @@ function App({needsAuth,loadAuthToken}) {
 const AppWrapper = () => {
   const needsAuth = useSelector((state) => !state.session.user);
   const dispatch = useDispatch();
-  return <App needsAuth={needsAuth} loadAuthToken={() => dispatch(loadAuthToken())} />;
+  return <App needsAuth={needsAuth}  />;
 };
 
 

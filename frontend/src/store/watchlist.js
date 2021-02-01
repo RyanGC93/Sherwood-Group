@@ -15,15 +15,15 @@ const setWatchedStocks = (watchedStocks) => ({
 
 export const getAllwatchlists = () => async (dispatch) => {
     const res = await fetch('api/watchlist')
-    const watchedlists = res.data.watchedStocks
+    const watchedlists = res.data
     let normalizedList = {}
-    watchedlists.forEach(list => {
+    for(let i =0; i < watchedlists.length; i++){
+        const list = watchedlists[i]
         normalizedList[list.id] = list
-
-    });
+    }
     // const json = res.data
-
-    dispatch(setWatchedStocks(normalizedList))
+    console.log('normalized', normalizedList)
+    dispatch(setWatchedStocks(watchedlists))
 
 }
 
