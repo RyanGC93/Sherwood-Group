@@ -19,7 +19,7 @@ const setTokenCookie = (res, user) => {
     secure: isProduction,
     sameSite: isProduction && 'Lax',
   });
-
+  console.log(token)
   return token;
 };
 

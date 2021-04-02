@@ -21,7 +21,7 @@ function SignupFormPage() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.registerUser({ email, username, password }))
+      return dispatch(sessionActions.registerUser({ email, firstname, lastname, username, password }))
         .catch(res => {
           if (res.data && res.data.errors) setErrors(res.data.errors);
         });
@@ -39,7 +39,8 @@ function SignupFormPage() {
 	        <div>
             <div className="header-container">
               <h1>Sign Up</h1>
-            </div>
+					  </div>
+					  <div>first</div>
 	          <input
               className="form-control"
               placeholder="Firstname"
@@ -49,7 +50,7 @@ function SignupFormPage() {
 	            required
 	          />
 	        </div>          
-	        <div>
+	        <div> last
 	          <input
               className="form-control"
               placeholder="Last Name"
@@ -59,7 +60,7 @@ function SignupFormPage() {
 	            required
 	          />
 	        </div>
-	        <div>
+	        <div> email
 	          <input
               className="form-control"
               placeholder="Email"
@@ -69,7 +70,7 @@ function SignupFormPage() {
 	            required
 	          />
 	        </div>
-	        <div>
+	        <div> username
 	          <input
               className="form-control"
               placeholder="Username"
@@ -79,7 +80,7 @@ function SignupFormPage() {
 	            required
 	          />
 	        </div>
-	        <div>
+	        <div> pass
 	          <input
               className="form-control"
               placeholder="Password"              
@@ -90,7 +91,7 @@ function SignupFormPage() {
 	          />
 	        </div>
 	        <div>
- 
+				<div>conf pass</div>
 	          <input
               className="form-control"
               placeholder="Confirm Password"
