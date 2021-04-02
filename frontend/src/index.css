@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Nunito:wght@600&family=Trykker&display=swap');
+
 body {
     background-color: black;
     color: white;
-    font-family: Capsule Sans Text,-apple-system,BlinkMacSystemFont,sans-serif;
+    font-family: 'Trykker', serif;
     font-size: 13px;
     font-weight: 400;
     letter-spacing: -.1px;
@@ -9,3 +11,11 @@ body {
     margin: 0;
 }
 
+.header {
+    font-family: 'Arsenal', sans-serif;
+
+}
+.sub-header {
+
+    font-family: 'Nunito', sans-serif;
+}

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './styles.css'
 
 
 import { useState } from 'react';
@@ -7,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 
 import { login } from '../../../store/session';
 
-const Login= () => {
+const Login= ({setToggle}) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
@@ -29,8 +30,8 @@ const Login= () => {
 
   return (
     <>
-      <form onSubmit={onSubmit} className="form">
-        <h3>Login</h3>
+      <form onSubmit={onSubmit} className="login-form">
+        <div className='login-title header' >Login</div>
         {
           errors.length > 0 && (
           <ul className="errors-list">
@@ -38,21 +39,25 @@ const Login= () => {
           </ul>
           )
         }
-        <div className="form__input-group">
-          <label className="form__input-group--label">
+        <div className="input-group">
+          <label className="input-group-label sub-header">
             Username or Email
           </label>
-          <input required className="form__input-group--input-field" type="text" value={credential} onChange={e => setCredential(e.target.value)} />
+          <input required className="form-input-field" type="text" value={credential} onChange={e => setCredential(e.target.value)} />
         </div>
-        <div className="form__input-group">
-          <label className="form__input-group--label">
+        <div className="input-group">
+          <label className="input-group-label sub-header">
             Password
           </label>
-          <input required className="form__input-group--input-field" type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          <input required className="form-input-field" type="password" value={password} onChange={e => setPassword(e.target.value)} />
         </div>
-        <div className="form__button-div">
-          <button className="form__button-div--button" type="submit">Login</button>
+        <div className="">
+          <button className="" type="submit">Login</button>
         </div>
+        <div className="">
+          <button className="" type="submit">Demo Login</button>
+        </div>
+        <div className='login-toggle' onClick={()=> setToggle(true)}>Don't Have an Account?</div>
       </form>
     </>
   );

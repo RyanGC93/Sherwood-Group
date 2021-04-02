@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
 import './SignupForm.css';
 
-const SignIn = () => {
+const SignUp = ({setToggle}) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
@@ -31,7 +31,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="login-container" >
+
 	      <form onSubmit={handleSubmit}>
 	        <ul>
 	          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -103,11 +103,11 @@ const SignIn = () => {
           </div>
           <div>
 	          <button type="submit">Sign Up</button>
+			<div onClick={()=>setToggle(false)}>Already Have An Account?</div>	  
           </div>
-	      </form>
-	    </div>  
+			  </form>
     </>
   );
 }
 
-export default SignIn;
+export default SignUp;
