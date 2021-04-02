@@ -18,7 +18,7 @@ const Login= ({setToggle}) => {
   if (sessionUser) return <Redirect to="/" />;
 
   const onSubmit = async (e) => {
-    e.preventDefault();
+    if(e)e.preventDefault();
     setErrors([]);
     const user = {
       credential,
@@ -27,6 +27,11 @@ const Login= ({setToggle}) => {
     const res = await dispatch(login(user));
     if (res.data && res.data.errors) setErrors(res.data.errors);
   };
+  const handleDemo = () => {
+    setCredential('Demo');
+    setPassword('password');
+    onSubmit()
+  }
 
   return (
     <>
@@ -51,11 +56,11 @@ const Login= ({setToggle}) => {
           </label>
           <input required className="form-input-field" type="password" value={password} onChange={e => setPassword(e.target.value)} />
         </div>
-        <div className="">
-          <button className="" type="submit">Login</button>
+        <div className="login-btns-container">
+          <div className="login-btn" onClick={onSubmit}>Login</div>
+          <div  className="login-btn" onClick={handleDemo} >Demo Login</div>
         </div>
         <div className="">
-          <button className="" type="submit">Demo Login</button>
         </div>
         <div className='login-toggle' onClick={()=> setToggle(true)}>Don't Have an Account?</div>
       </form>
