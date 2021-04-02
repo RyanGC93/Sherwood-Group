@@ -49,7 +49,7 @@ function NewsStories() {
 										<div className='article__date'>{article.publishedAt}</div>
 
 									</div>
-									<img src={article.urlToImage}/>
+									<img className='article-img' alt='' src={article.urlToImage}/>
 									<p className="article__content">
 										{article.description}
 									</p>									

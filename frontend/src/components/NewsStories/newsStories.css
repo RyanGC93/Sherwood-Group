@@ -2,7 +2,7 @@ body{
     color: white
 }
 
-img{
+.article-img{
     height:120px;
     width: 120px;
     right:0px
