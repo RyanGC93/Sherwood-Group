@@ -9,7 +9,7 @@ import StockDetailPage from './components/StockDetailPage/StockDetailPage'
 import {Switch, Route,Redirect} from 'react-router-dom'
 import { restoreUser, loadAuthToken } from './store/session';
 import { ProtectedRoute, PrivateRoute } from "./utils/route_protect_util";
-import LoginSignupPage from "./components/LoginSignupPage";
+import LoginSignupPage from "./components/LoginSignupPage/SignIn";
 // import Spinner from './assests/Spinner.js'
 //import ProductDetail from "./components/ProductDetail/ProductDetail"
 
