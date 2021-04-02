@@ -52,7 +52,7 @@ const SignUp = ({ setToggle }) => {
 						</ul>
 
 						<div className="input-group">
-							<label className="input-group-label sub-header">Email</label>
+							<label className="input-group sub-header">Email</label>
 							<input
 								className="form-control"
 								placeholder="Email"
@@ -64,7 +64,7 @@ const SignUp = ({ setToggle }) => {
 						</div>
 
 						<div className="input-group">
-							<label className="input-group-label sub-header">Password</label>
+							<label className="input-group sub-header">Password</label>
 							<input
 								className="form-control"
 								placeholder="Password"
@@ -75,7 +75,7 @@ const SignUp = ({ setToggle }) => {
 							/>
 						</div>
 						<div className="input-group">
-							<label className="input-group-label sub-header">
+							<label className="input-group sub-header">
 								Confirm Password
 							</label>
 							<input
@@ -98,9 +98,10 @@ const SignUp = ({ setToggle }) => {
 				)}
 				{advance && (
 					<>
+				<div className="login-spacer"></div>		
 				<div className="input-group">
-				<label className="input-group-label sub-header">
-				first Name
+				<label className="input-group sub-header">
+				First Name
 				</label>
 				<input
 				className="form-control"
@@ -112,7 +113,7 @@ const SignUp = ({ setToggle }) => {
 				/>
 				</div>
 				<div className="input-group">
-				<label className="input-group-label sub-header">
+				<label className="input-group sub-header">
 				Last name
 				</label>
 				<input
@@ -125,7 +126,7 @@ const SignUp = ({ setToggle }) => {
 						/>
 				</div>
 				<div className="input-group">
-				<label className="input-group-label sub-header">
+				<label className="input-group sub-header">
             Set Username
 			</label>
 			<input
@@ -137,8 +138,8 @@ const SignUp = ({ setToggle }) => {
 			required
 			/>
 						</div>
-						<div classname="login-btns-container">
-							<div classname="login-btn" onClick={()=> setAdvance(false)}>Go Back</div>
+						<div className="login-btns-container">
+							<div className="login-btn" onClick={()=> setAdvance(false)}>Go Back</div>
 							<div className="login-btn" onClick={handleSubmit}>Sign Up</div>
 
 						</div>
