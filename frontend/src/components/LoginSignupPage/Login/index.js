@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css'
-
+import PortfolioIcons from '../PortfolioIcons'
 
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,26 +24,30 @@ const Login= ({setToggle}) => {
       credential,
       password,
     };
+    console.log(user)
     const res = await dispatch(login(user));
     if (res.data && res.data.errors) setErrors(res.data.errors);
   };
-  const handleDemo = () => {
-    setCredential('Demo');
-    setPassword('password');
-    onSubmit()
+  const handleDemo = async () => {
+
+
+    const user = {credential: "Demo", password: "password"}
+    console.log(user)
+    const res = await dispatch(login(user));
+    if (res.data && res.data.errors) setErrors(res.data.errors);
   }
 
   return (
     <>
       <form onSubmit={onSubmit} className="login-form">
-        <div className='login-title header' >Login</div>
         {
           errors.length > 0 && (
-          <ul className="errors-list">
+            <ul className="errors-list">
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
           )
         }
+        <div className='login-title header' >Login</div>
         <div className="input-group">
           <label className="input-group-label sub-header">
             Username or Email
@@ -62,6 +66,7 @@ const Login= ({setToggle}) => {
         </div>
         <div className="">
         </div>
+        <PortfolioIcons />
         <div className='login-toggle' onClick={()=> setToggle(true)}>Don't Have an Account?</div>
       </form>
     </>

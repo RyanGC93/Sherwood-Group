@@ -39,6 +39,19 @@ const SignUp = ({ setToggle }) => {
 		]);
 	};
 
+	const firstFormHandler = () => {
+		if (password === confirmPassword) {
+			setAdvance(true)
+		} else {
+			setErrors([
+				"Confirm Password field must be the same as the Password field",
+			]);
+		}
+
+	}
+
+
+
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
@@ -54,8 +67,7 @@ const SignUp = ({ setToggle }) => {
 						<div className="input-group">
 							<label className="input-group sub-header">Email</label>
 							<input
-								className="form-control"
-								placeholder="Email"
+								className="form-input-field"
 								type="text"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
@@ -66,8 +78,7 @@ const SignUp = ({ setToggle }) => {
 						<div className="input-group">
 							<label className="input-group sub-header">Password</label>
 							<input
-								className="form-control"
-								placeholder="Password"
+								className="form-input-field"
 								type="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
@@ -79,8 +90,7 @@ const SignUp = ({ setToggle }) => {
 								Confirm Password
 							</label>
 							<input
-								className="form-control"
-								placeholder="Confirm Password"
+								className="form-input-field"
 								type="password"
 								value={confirmPassword}
 								onChange={(e) => setConfirmPassword(e.target.value)}
@@ -88,7 +98,7 @@ const SignUp = ({ setToggle }) => {
 							/>
 						</div>
 						<div>
-							<div className="login-btn" onClick={()=>setAdvance(true)}>Next Page</div>
+							<div className="login-btn" onClick={firstFormHandler}>Next Page</div>
 
 							<div className='login-toggle' onClick={() => setToggle(false)}>
 								Already Have An Account?
@@ -104,8 +114,7 @@ const SignUp = ({ setToggle }) => {
 				First Name
 				</label>
 				<input
-				className="form-control"
-				placeholder="Firstname"
+				className="form-input-field"
 				type="text"
 				value={firstname}
 				onChange={(e) => setFirstname(e.target.value)}
@@ -117,8 +126,7 @@ const SignUp = ({ setToggle }) => {
 				Last name
 				</label>
 				<input
-				className="form-control"
-				placeholder="Last Name"
+				className="form-input-field"
 						type="text"
 						value={lastname}
 						onChange={(e) => setLastname(e.target.value)}
@@ -127,11 +135,10 @@ const SignUp = ({ setToggle }) => {
 				</div>
 				<div className="input-group">
 				<label className="input-group sub-header">
-            Set Username
+            Username
 			</label>
 			<input
-			className="form-control"
-			placeholder="Username"
+			className="form-input-field"
 			type="text"
 			value={username}
 			onChange={(e) => setUsername(e.target.value)}

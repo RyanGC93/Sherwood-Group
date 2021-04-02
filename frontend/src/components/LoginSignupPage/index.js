@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import SignUp from './SignUp'
 import './styles.css'
 import Login from './Login'
+
 const LoginSignupPage = () => {
     const [toggle, setToggle] = useState(false)
 

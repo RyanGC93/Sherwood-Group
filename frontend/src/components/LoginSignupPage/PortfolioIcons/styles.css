@@ -8,7 +8,7 @@
      font-size: 20px;
      color: white;
      text-align: center;
-     /* text-decoration: underline */
+     margin-top: 5px;
   }
   .professional-fa:hover{
     transform: scale(1.2);
@@ -19,4 +19,8 @@
   .professional-row {
     display: flex;
     justify-content:center;
+  }
+  .middle-social {
+    margin-left: 10px;
+    margin-right: 10px;
   }

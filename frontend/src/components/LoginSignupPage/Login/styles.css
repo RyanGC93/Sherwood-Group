@@ -19,8 +19,10 @@
     font-size: 25px;
 }
 .form-input-field{
+    border: 2px solid white;
     margin-top: 10px;
     padding: 2px 2px 2px 2px;
+    background-color: rgba(199, 199, 199, 0.2)
 }
 .login-btns-container{
     margin-top: 20px;
@@ -29,13 +31,29 @@
 }
 
 .login-btn {
-    padding: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
+    font-size: 17px;
     border: 4px solid white;
-    width: 90px;
+    width: 100px;
     text-align: center;
     cursor: pointer;
+    
+    -webkit-transition : border 500ms ease-out;
+    -moz-transition : border 500ms ease-out;
+    -o-transition : border 500ms ease-out;
+    transition : border 500ms ease-out;
+
 
 }
+
+.login-btn:hover {
+    border: 4px solid green;
+    transform: scale(1.2)
+    /* background-color: rgb(66, 66, 66); */
+
+}
+
+
 
 .login-toggle{
     cursor: pointer;
@@ -46,8 +64,11 @@
     margin: auto;
     left: 0;
     right: 0;
-
 }
+.login-toggle:hover{
+    transform: scale(1.2)
+}
+
 .login-form{
     position: relative;
 }

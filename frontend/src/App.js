@@ -25,7 +25,7 @@ function App({needsAuth,loadAuthToken}) {
   return (
     <>
       
-        {/* <Navigation isLoaded={isLoaded} /> */}
+        <Navigation isLoaded={isLoaded} />
 
       <Switch>
         <PrivateRoute
