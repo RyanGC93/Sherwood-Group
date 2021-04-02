@@ -9,7 +9,7 @@ import StockDetailPage from './components/StockDetailPage/StockDetailPage'
 import {Switch, Route,Redirect} from 'react-router-dom'
 import { restoreUser, loadAuthToken } from './store/session';
 import { ProtectedRoute, PrivateRoute } from "./utils/route_protect_util";
-import SignupFormPage from "./components/SignupFormPage";
+import LoginSignupPage from "./components/LoginSignupPage";
 // import Spinner from './assests/Spinner.js'
 //import ProductDetail from "./components/ProductDetail/ProductDetail"
 
@@ -45,7 +45,7 @@ function App({needsAuth,loadAuthToken}) {
           component={NewsFeed}
         />
 		    <Route exact path="/signup">
-          <SignupFormPage />
+          <LoginSignupPage />
         </Route>
         <Route path="*" component={PageNotFound} />
         <Redirect to="/"/>
