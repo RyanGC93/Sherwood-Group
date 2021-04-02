@@ -1,0 +1,22 @@
+.professional-fa{
+    width: 50px;
+    height: 80px;
+    padding: 5px 5px 5px 5px;  
+  }
+  .professional-header{
+     padding: 8px 4px 2px 4px;
+     font-size: 20px;
+     color: white;
+     text-align: center;
+     /* text-decoration: underline */
+  }
+  .professional-fa:hover{
+    transform: scale(1.2);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .professional-row {
+    display: flex;
+    justify-content:center;
+  }
